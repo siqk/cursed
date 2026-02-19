@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/rblxacs — Purchase Successful</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Animated Grid Background */
+.grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: moveGrid 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGrid {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-60px,-60px); }
+}
+
+/* Floating Gradient Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: float 12s infinite alternate ease-in-out;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: white;
+  top: -100px;
+  left: -100px;
+}
+
+.orb2 {
+  width: 500px;
+  height: 500px;
+  background: white;
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(60px); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 750px;
+  padding: 70px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #fff, #aaa, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  from { background-position: -200px; }
+  to { background-position: 200px; }
+}
+
+/* Success SVG Animation */
+.check-wrapper {
+  margin: 0 auto 40px;
+  width: 100px;
+  height: 100px;
+}
+
+circle {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  animation: drawCircle 1s ease forwards;
+}
+
+path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawCheck 0.6s 1s ease forwards;
+}
+
+@keyframes drawCircle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+p {
+  color: #aaa;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Details Box */
+.details {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.details span:last-child {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Animated Button */
+.button {
+  padding: 18px 50px;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  top: 0;
+  left: -150%;
+  transition: 0.6s;
+}
+
+.button:hover::before {
+  left: 150%;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-4px);
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  z-index: 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<div class="container">
+  <div class="card">
+    <div class="logo">/rblxacs</div>
+
+    <div class="check-wrapper">
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="50"
+          fill="none"
+          stroke="white"
+          stroke-width="4"/>
+        <path d="M30 55 L45 70 L75 40"
+          fill="none"
+          stroke="white"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>Purchase Successful</h1>
+    <p>Your Headless + Korblox account has been successfully delivered.<br>
+    Instant access has been granted securely.</p>
+
+    <div class="details">
+      <div><span>Product</span><span>Headless + Korblox Account</span></div>
+      <div><span>Status</span><span>Completed</span></div>
+      <div><span>Payment</span><span>Confirmed</span></div>
+      <div><span>Delivery</span><span>5-7 days to discord acc @tkuy</span></div>
+    </div>
+
+    <button class="button" onclick="redirect()">
+      Access Dashboard
+    </button>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 /rblxacs — Premium Roblox Accounts
+</div>
+
+<script>
+function redirect() {
+  const btn = document.querySelector(".button");
+  btn.innerText = "Redirecting...";
+  btn.style.pointerEvents = "none";
+
+  setTimeout(() => {
+    btn.innerText = "Access Granted ✓";
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
